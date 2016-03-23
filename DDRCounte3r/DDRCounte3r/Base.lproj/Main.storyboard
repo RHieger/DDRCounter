@@ -26,11 +26,18 @@
                                 <rect key="frame" x="375" y="424" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="51"/>
                                 <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="countUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HKt-UQ-A9G"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jws-0I-J7u">
-                                <rect key="frame" x="252" y="93" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of Count" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jws-0I-J7u">
+                                <rect key="frame" x="241.5" y="93" width="118.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="counterNameDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="4n2-wt-jUR"/>
+                                    <action selector="counterNameDidChange:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="O3e-Pa-yh7"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BR7-Xq-2qD">
                                 <rect key="frame" x="275" y="184" width="51" height="48"/>
@@ -40,6 +47,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Jws-0I-J7u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6CR-1i-AAt"/>
                             <constraint firstItem="T3x-pb-f3k" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="139" id="E3V-90-xnd"/>
@@ -50,9 +58,21 @@
                             <constraint firstItem="T3x-pb-f3k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-68" id="mev-Xe-I6W"/>
                             <constraint firstItem="Jws-0I-J7u" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-192" id="zWE-Bn-yvb"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Eyc-Kq-f2I" appends="YES" id="Jhw-EM-jql"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="counterLabel" destination="BR7-Xq-2qD" id="bZe-4G-ZT2"/>
+                        <outlet property="counterName" destination="Jws-0I-J7u" id="cmb-Tp-Bq8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Eyc-Kq-f2I">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="BYZ-38-t0r" id="SKa-l6-XUj"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="305" y="366"/>
         </scene>
