@@ -11,7 +11,7 @@ import UIKit
 class CounterViewController: UIViewController, UITextFieldDelegate {
 
     // IBOutlets:
-    var item = Item()
+    var item: Item!
 
     @IBOutlet var counterName: UITextField?
     
@@ -38,6 +38,7 @@ class CounterViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        print(item.name)
         if item.name != "" {
             counterName!.text = item.name
         }
