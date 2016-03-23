@@ -38,6 +38,11 @@ class CounterViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        if item.name != "" {
+            counterName!.text = item.name
+        }
+        
+        counterLabel!.text = "\(item.count)"
         
         // Do any additional setup after loading the view, typically from a nib.
         

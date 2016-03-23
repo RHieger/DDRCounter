@@ -12,10 +12,17 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let itemStore = ItemStore()
+        
+        let listController = window!.rootViewController as! ListViewController
+        listController.itemStore = itemStore
+        
         return true
     }
 
