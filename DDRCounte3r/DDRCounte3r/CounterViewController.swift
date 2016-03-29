@@ -12,6 +12,7 @@ class CounterViewController: UIViewController, UITextFieldDelegate {
 
     // IBOutlets:
     var item: Item!
+    var itemStore:ItemStore!
 
     @IBOutlet var counterName: UITextField?
     
@@ -19,7 +20,6 @@ class CounterViewController: UIViewController, UITextFieldDelegate {
         counterName!.resignFirstResponder()
     }
     @IBAction func counterNameDidChange(sender: AnyObject) {
-        item.name = counterName!.text
         print(item.name)
     }
     @IBOutlet var counterLabel: UILabel!
@@ -54,7 +54,10 @@ class CounterViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        item.name = counterName!.text
+    }
 
 
 }

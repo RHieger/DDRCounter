@@ -12,7 +12,7 @@ class ItemStore {
     
     // var allItems = [Item]()
     
-    var allItems = [Item(name: "Cups of Coffee"), Item(name: "Miles ran")]
+    var allItems = [Item]()
     
     
     func addItem(newItem: Item) {

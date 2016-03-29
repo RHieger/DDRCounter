@@ -45,7 +45,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BR7-Xq-2qD">
                                 <rect key="frame" x="275" y="184" width="51" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="44"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -65,6 +65,8 @@
                             <outletCollection property="gestureRecognizers" destination="Eyc-Kq-f2I" appends="YES" id="Jhw-EM-jql"/>
                         </connections>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="counterLabel" destination="BR7-Xq-2qD" id="bZe-4G-ZT2"/>
                         <outlet property="counterName" destination="Jws-0I-J7u" id="cmb-Tp-Bq8"/>
@@ -99,7 +101,7 @@
                                             <rect key="frame" x="15" y="12" width="31.5" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IVT-u1-hvf">
@@ -121,7 +123,13 @@
                             <outlet property="delegate" destination="Rbs-H6-0tW" id="93J-fj-Vwu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="cZe-3p-1ar"/>
+                    <navigationItem key="navigationItem" id="cZe-3p-1ar">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="2Xk-Ls-R3C">
+                            <connections>
+                                <action selector="addItem:" destination="Rbs-H6-0tW" id="4Qg-Qq-cB1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZbC-yJ-uFF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

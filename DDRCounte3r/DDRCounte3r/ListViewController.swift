@@ -11,6 +11,11 @@ import UIKit
 class ListViewController: UITableViewController {
     var itemStore: ItemStore!
     
+    @IBAction func addItem(sender: AnyObject) {
+        var newItem = Item(name: "New Item")
+        itemStore.addItem(newItem)
+        tableView.reloadData()
+    }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("UITableViewCell", forIndexPath: indexPath)
         
@@ -34,5 +39,10 @@ class ListViewController: UITableViewController {
                 counterViewController.item = item
             }
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
 }
